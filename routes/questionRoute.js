@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/:id/:questionNumber', async (req, res) => {
     let quizID = req.params.id;
     let questionNumber = req.params.questionNumber;
-
+    
     // ensure params are numbers 
     if(isNaN(quizID) || isNaN(questionNumber)) {
         return res.send('error');

@@ -40,12 +40,11 @@ class Question {
         parsedObj.question = json[0].question;
         parsedObj.image = json[0].image;
         parsedObj.answers = [];
-
         for(let o of json) {
             parsedObj.answers.push(
                 {
                     answer: o.answer,
-                    correct: Boolean(o.correct)
+                    correct: Boolean(o.correct[0])
                 }
             );
         }
