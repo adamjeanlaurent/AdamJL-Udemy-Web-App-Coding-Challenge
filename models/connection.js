@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 require('dotenv').config({path: '../.env'});
 
+// initialize reusable connection 
 const connection = mysql.createPool({
     host: process.env.HOST,
     user: process.env.USERNAME,

@@ -22,19 +22,18 @@ class Question {
                     },
                     {
                         "answer": "Libya",
-                        "correct": true
+                        "correct": false
                     },
                     {
                         "answer": "Sudan",
-                        "correct": true
+                        "correct": false
                     },
                     {
                         "answer": "Central Africa Republic",
-                        "correct": true
+                        "correct": false
                     }
                 ]
             }
-
         */
         let parsedObj = {};
         parsedObj.question = json[0].question;

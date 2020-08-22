@@ -3,14 +3,14 @@ const quiz = require('../models/quiz');
 
 const router = express.Router();
 
-// @route /api/quiz
-// @desc Returns all quizzes from DB
+// @route GET /api/quiz
+// @desc Get all quizzes
 router.get('/', async (req, res) => {
     try {
-        let result = await quiz.Get();
-        return res.send(result);
+        let serviceResponse = await quiz.Get();
+        return res.send(serviceResponse);
     }
-    
+        
     catch {
         return res.send('error');
     }

@@ -4,8 +4,8 @@ const question = require('../models/question');
 
 const router = express.Router();
 
-// @route 
-// @desc /api/question/:QuizID/:QuestionNumber
+// @route GET /api/question/:QuizID/:QuestionNumber
+// @desc Get specified question number from quiz with specified ID
 router.get('/:id/:questionNumber', async (req, res) => {
     let quizID = req.params.id;
     let questionNumber = req.params.questionNumber;
@@ -17,7 +17,8 @@ router.get('/:id/:questionNumber', async (req, res) => {
 
     try {
         let result = await question.Get(quizID, questionNumber);
-        return res.send(question.parseResponse(result));
+        let parsedResult = question.parseResponse(result);
+        return res.send(parsedResult);
     }
     
     catch {
